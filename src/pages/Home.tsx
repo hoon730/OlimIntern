@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { useNavigate, useMatch, PathMatch } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import { getMovies, GetMoviesResult } from "../api";
 import { useQuery } from "@tanstack/react-query";
 import { makeImagePath } from "../utils";
@@ -167,7 +167,6 @@ const offset = 6;
 
 const Home = () => {
   const navigate = useNavigate();
-  const moiveMatch: PathMatch<string> | null = useMatch("/movies/:movieId");
 
   const { data, isLoading } = useQuery<GetMoviesResult>({
     queryKey: ["nowPlaying"],
@@ -204,10 +203,6 @@ const Home = () => {
     setIsModalOpen(false);
     setHoveredMovie(null);
   };
-
-  const clickedMovie =
-    moiveMatch?.params.movieId &&
-    data?.results.find((movie) => movie.id === +moiveMatch.params.movieId!);
 
   return (
     <Container className={`overflow-hidden w-full h-[2000px] mt-15`}>

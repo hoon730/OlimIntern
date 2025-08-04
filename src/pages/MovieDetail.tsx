@@ -58,7 +58,7 @@ const MovieDetail = () => {
   // 에러 처리
   if (moviesError || videosError || reviewsError) {
     return (
-      <div className="mx-auto mt-[60px] w-4xl">
+      <div className="mx-auto mt-[60px] w-full">
         <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
           <div className="flex justify-center items-center mb-4 w-16 h-16 bg-red-100 rounded-full">
             <span className="text-2xl">⚠️</span>
@@ -298,7 +298,7 @@ const MovieDetail = () => {
   // 영화를 찾지 못한 경우
   if (!currentMovie) {
     return (
-      <div className="mx-auto mt-[60px] w-4xl">
+      <div className="mx-auto mt-[60px] w-full">
         <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
           <div className="flex justify-center items-center mb-4 w-16 h-16 bg-gray-100 rounded-full">
             <span className="text-2xl">🎬</span>
